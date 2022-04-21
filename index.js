@@ -1,16 +1,16 @@
 // IMPORTS
-require('dotenv').config()
+require("dotenv").config();
 const { Client } = require("pg");
 
 const queryCentric = async (query) => {
-  var response = {}
+  var response = {};
 
   const client = new Client({
     host: process.env.HOST,
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
-    port: process.env.PORT
+    port: process.env.PORT,
   });
 
   client.connect();
@@ -30,8 +30,8 @@ const queryCentric = async (query) => {
   });
 };
 
-const handler = async() => {
-  queryCentric()
-}
+const handler = async () => {
+  queryCentric();
+};
 
-handler
+handler();
